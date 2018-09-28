@@ -1,0 +1,23 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Provider } from 'react-redux'
+import { BrowserRouter, Route } from 'react-router-dom';
+import { Switch } from 'react-router';
+
+import App from './App'
+import SaveAlbums from './SaveAlbums'
+import './index.css'
+import store from './store'
+
+ReactDOM.render(
+  <Provider store={store}>
+	  <BrowserRouter>
+	  	<Switch>
+		  	<Route exact path='/' component={App} />
+		  	<Route path='/save' component={SaveAlbums} />
+	  	</Switch>
+	  </BrowserRouter>
+  </Provider>,
+  document.getElementById('root')
+)
