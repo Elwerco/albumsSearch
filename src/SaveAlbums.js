@@ -11,18 +11,17 @@ export default class SaveAlbums extends Component {
 	render() {
 		var list = [];
 		//Лимит в 1000 треков
-		for (var i = 0; i < 999; i++) {
-		  var parse = JSON.parse(localStorage.getItem[0])
-		  if (parse) {
-		  	parse.secondId = i;
-		 	list.push(parse);
-		  }
+		console.log(list);
+		for (var i = 0; i < localStorage.length; i++) {
+		  var parse = JSON.parse(localStorage.getItem(store.getState().playlists[i]))
+		  list.push(parse);
+		  console.log(list)
 		}
-		console.log(localStorage.length);
+		console.log(list)
 		return(
 			<div>
 			    {list.map((l, index) =>
-		          <div key={index}>{l.title} <DeleteAlbum {...l}/></div>
+		          <div key={index}>{l.title}<DeleteAlbum {...l}/></div>
 		        )}
 			</div>
 		)

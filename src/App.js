@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
-
 import store from './store'
+import { Link } from 'react-router-dom'
+
 import { getTracks } from './actions/tracks';
 import { p } from './actions/tracks';
 import Album from './Album';
@@ -20,6 +21,7 @@ class App extends Component {
     console.log(onLoad)
     return (
       <div>
+        <Link to='/save'>Save tracks</Link>
         <input type='text' ref={(input) => { this.albInput = input }} />
         <button onClick={this.albButton.bind(this)}>Text</button>
         {onLoad[0] && onLoad[0].data['release-groups'].map((d, index) =>

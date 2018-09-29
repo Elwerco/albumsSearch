@@ -10,11 +10,12 @@ export default class Album extends Component {
 	addAlbumToStore() {
 		localStorage.setItem(this.props.id, JSON.stringify(this.props));
 		store.dispatch({ type: 'ADD_ALBUM', payload: this.props.id })
+		console.log(store.getState().playlists)
 	}
 	render() {
 		return(
 		  <Card>
-	        <CardImg className="318img"top width="318" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+	        // <CardImg className="318img"top width="318" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
 	        <CardBody>
 	          <CardTitle>{this.props.title}</CardTitle>
 	          <CardSubtitle>Card subtitle</CardSubtitle>
