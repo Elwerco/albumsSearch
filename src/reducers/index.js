@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux';
 
-import tracks from './tracks';
-import playlists from './playlists';
-import filterTracks from './filterTracks';
+import searchTracks from './searchAlbums';
+import saveAlbums from './saveAlbums';
 
 export default combineReducers({
-  tracks,
-  playlists,
-  filterTracks
+  searchTracks,
+  saveAlbums
 });

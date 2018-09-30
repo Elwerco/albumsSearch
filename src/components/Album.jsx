@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import axios from 'axios';
-import store from './store';
+import store from '../containers/store';
 
 import { Card, CardImg, CardText, CardBody, 
 CardTitle, CardSubtitle, Button } from 'reactstrap';
 
 export default class Album extends Component {
 	addAlbumToStore() {
+		localStorage.removeItem('loglevel:webpack-dev-server');
 		localStorage.setItem(this.props.id, JSON.stringify(this.props));
 		store.dispatch({ type: 'ADD_ALBUM', payload: this.props.id })
-		console.log(store.getState().playlists)
 	}
 	render() {
+		document.addEventListener("scroll", function storage(argument) {
+	      localStorage.removeItem('loglevel:webpack-dev-server');
+	    }, false);
 		return(
-		  <Card>
-	        // <CardImg className="318img"top width="318" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+		  <Card className='componentCard'>
+	        <CardImg className="318img"top width="318" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
 	        <CardBody>
 	          <CardTitle>{this.props.title}</CardTitle>
 	          <CardSubtitle>Card subtitle</CardSubtitle>

@@ -5,10 +5,10 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Switch } from 'react-router';
 
-import App from './App'
-import SaveAlbums from './SaveAlbums'
-import './index.css'
-import store from './store'
+import App from './components/App.jsx';
+import SaveAlbums from './components/SaveAlbums.jsx';
+import './css/index.css';
+import store from './containers/store';
 
 ReactDOM.render(
   <Provider store={store}>

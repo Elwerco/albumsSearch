@@ -1,15 +1,14 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import store from './store';
+import store from '../containers/store';
 
-export default class DeleteAlbum extends Component {
+class DeleteAlbum extends Component {
 	deleteAlbum() {
 		localStorage.removeItem(this.props.id);
-		var secondStore = store.getState().playlists;
+		var secondStore = store.getState().saveAlbums;
 		secondStore.splice(this.props.id, 1);
-		console.log(secondStore);
 		store.dispatch({ type: 'DELETE_ALBUM', payload: secondStore });
-		store.dispatch({ type: 'ADD_TRACK' });
+		document.location.reload(true);
 	}
 	render() {
 		return(
@@ -17,3 +16,11 @@ export default class DeleteAlbum extends Component {
 		)
 	}
 }
+export default connect(
+  state => ({
+    saveAlbums: state.saveAlbums
+  }),
+  dispatch => ({
+
+  })
+)(DeleteAlbum)

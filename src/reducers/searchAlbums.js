@@ -1,9 +1,10 @@
 import axios from 'axios'
-import store from '../store'
+import store from '../containers/store'
 
 const initialState = []
 
-export default function tracks (state = initialState, action) {
+
+export default function searchTracks (state = initialState, action) {
   if (action.type === 'ADD_TRACK') {
     return [
       // ...state,
