@@ -26,7 +26,7 @@ class App extends Component {
         <div className='flexApp'>
           <Link to='/save'>Save Albums</Link>
           <input className='inputApp' type='text' ref={(input) => { this.albInput = input }} />
-          <Button className='primaryAppButton' color='primary' onClick={this.albButton.bind(this)}>Text</Button>
+          <Button className='primaryAppButton' color='primary' onClick={this.albButton.bind(this)}>Add</Button>
         </div>
         <Row className="appRow">
           {onLoad[0] && onLoad[0].data['release-groups'].map((d, index) =>
