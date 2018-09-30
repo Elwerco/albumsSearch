@@ -14,7 +14,7 @@ class DeleteAlbum extends Component {
 	}
 	render() {
 		return(
-			<Button color="danger" onClick={this.deleteAlbum.bind(this)}>Clicks</Button>
+			<Button color="danger" onClick={this.deleteAlbum.bind(this)}>Delete</Button>
 		)
 	}
 }
