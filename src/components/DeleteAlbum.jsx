@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import store from '../containers/store';
 
+import { Button } from 'reactstrap';
+
 class DeleteAlbum extends Component {
 	deleteAlbum() {
 		localStorage.removeItem(this.props.id);
@@ -12,7 +14,7 @@ class DeleteAlbum extends Component {
 	}
 	render() {
 		return(
-			<button color="danger" onClick={this.deleteAlbum.bind(this)}>Clicks</button>
+			<Button color="danger" onClick={this.deleteAlbum.bind(this)}>Clicks</Button>
 		)
 	}
 }
