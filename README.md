@@ -2,6 +2,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Инструкция по запуску
 
+npm i - для установки пакетов
+
 npm run build:dev - для сборки
 
 npm start - для запуска сервера без логов в хранилище
